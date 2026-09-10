@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MGLE.Core/MGLE.Core.csproj" />
+  <Project Path="MGLE.UI/MGLE.UI.csproj" />
+</Solution>
