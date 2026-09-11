@@ -38,5 +38,13 @@ namespace MGLE.Core.World
 
             return neighbours;
         }
+
+        public bool IsPositionValid(Position position)
+        {
+            return position.X >= 0 &&
+                   position.X < Width &&
+                   position.Y >= 0 &&
+                   position.Y < Height;
+        }
     }
 }
