@@ -11,5 +11,11 @@ namespace MGLE.Core.Cells
     {
         public Position Position { get; }
         public CellState State { get; set; }
+
+        public Cell(Position position, CellState state)
+        {
+            Position = position;
+            State = state;
+        }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MGLE.Core.World;
 
 namespace MGLE.Core.Rules
 {
-    internal class ConwayRule
+    public class ConwayRule : IWorldRule
     {
+        public void Apply(WorldState current, WorldState next)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

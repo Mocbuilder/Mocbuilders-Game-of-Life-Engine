@@ -17,5 +17,26 @@ namespace MGLE.Core.World
             Width = width;
             Height = height;
         }
+
+        public List<Position> GetNeighbourPositions(Position position)
+        {
+            List<Position> neighbours = new();
+
+            for (int x = -1; x <= 1; x++)
+            {
+                for (int y = -1; y <= 1; y++)
+                {
+                    if (x == 0 && y == 0)
+                        continue;
+
+                    neighbours.Add(new Position(
+                        position.X + x,
+                        position.Y + y
+                    ));
+                }
+            }
+
+            return neighbours;
+        }
     }
 }

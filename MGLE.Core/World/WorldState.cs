@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MGLE.Core.Cells;
+﻿using MGLE.Core.Cells;
 
-namespace MGLE.Core.World
+public class WorldState
 {
-    public class WorldState
+    public int Generation { get; }
+
+    public List<Cell> Cells { get; set; } = new();
+
+    public WorldState(int generation)
     {
-        public List<Cell> Cells { get; set; }
+        Generation = generation;
     }
 }
