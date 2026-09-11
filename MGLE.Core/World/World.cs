@@ -8,8 +8,14 @@ namespace MGLE.Core.World
 {
     public class World
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public int Width { get; }
+        public int Height { get; }
         public WorldState State { get; set; }
+
+        public World(int width, int height)
+        {
+            Width = width;
+            Height = height;
+        }
     }
 }
