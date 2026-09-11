@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MGLE.Core.World
+namespace MGLE.Core.Worlds
 {
     public class World
     {
         public int Width { get; }
         public int Height { get; }
         public WorldState State { get; set; }
+        public bool WrapAround { get; }
 
-        public World(int width, int height)
+        public World(int width, int height, bool wrapAround)
         {
             Width = width;
             Height = height;
+            State = new WorldState(0);
+            WrapAround = wrapAround;
         }
 
         public List<Position> GetNeighbourPositions(Position position)
@@ -45,6 +48,27 @@ namespace MGLE.Core.World
                    position.X < Width &&
                    position.Y >= 0 &&
                    position.Y < Height;
+        }
+
+        public Position NormalizePosition(Position position)
+        {
+            if (!WrapAround)
+                return position;
+
+            int x = position.X;
+            int y = position.Y;
+
+            if (x < 0)
+                x = Width - 1;
+            else if (x >= Width)
+                x = 0;
+
+            if (y < 0)
+                y = Height - 1;
+            else if (y >= Height)
+                y = 0;
+
+            return new Position(x, y);
         }
     }
 }

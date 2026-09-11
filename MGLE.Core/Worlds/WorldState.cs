@@ -1,5 +1,7 @@
 ﻿using MGLE.Core.Cells;
 
+namespace MGLE.Core.Worlds;
+
 public class WorldState
 {
     public int Generation { get; }
