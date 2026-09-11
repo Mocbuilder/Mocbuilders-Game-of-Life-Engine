@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MGLE.Core.World
+namespace MGLE.Core.Cells
 {
-    public readonly record struct Position(int X, int Y);
+    public enum CellState
+    {
+        Dead,
+        Alive
+    }
 }

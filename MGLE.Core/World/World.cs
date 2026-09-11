@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MGLE.Core.World
 {
-    internal class World
+    public class World
     {
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public WorldState State { get; set; }
     }
 }
